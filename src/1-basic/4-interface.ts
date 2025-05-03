@@ -73,3 +73,28 @@ class UserHouseHold implements UserHouse {
 // Now you can use this class to create an object of this type
 let userHouseHold: UserHouseHold = new UserHouseHold(12345, 'John Doe', 30); // This is a valid UserHouseHold
 console.log(userHouseHold.getUserInfo()); // This will print User ID: 12345, Name: John Doe, Age: 30
+
+// =====================================================================================
+// =====================================================================================
+
+// 4. Using the 'interface' keyword to create indexable types
+interface StringArray {
+  [index: number]: string; // This creates an indexable type that can be indexed by a number and returns a string
+}
+// You can use this interface to create variables of this type
+let stringArray: StringArray = ['Hello', 'World']; // This is a valid StringArray
+console.log(stringArray[0]); // This will print Hello
+console.log(stringArray[1]); // This will print World
+
+// You can also use this interface to create objects of this type
+interface StringObject {
+  [index: string]: string; // This creates an indexable type (Index Signature) that can be indexed by a string and returns a string.
+}
+// You can use this interface to create variables of this type
+let stringObject: StringObject = {
+  name: 'John Doe', // This is a valid StringObject
+  age: '30', // This is a valid StringObject
+  city: 'New York', // This is a valid StringObject
+};
+console.log(stringObject.name); // This will print John Doe
+console.log(stringObject.age); // This will print 30
