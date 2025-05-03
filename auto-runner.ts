@@ -63,13 +63,16 @@ function compileAndRun(filePath: string): void {
     const jsFile = path.join(outputDir, `${path.basename(filePath, '.ts')}.js`);
     
     if (fs.existsSync(jsFile)) {
+      //clear console
+      console.clear();
+
       console.log(`✅ Arquivo compilado: ${jsFile}`);
       console.log(`🚀 Executando: ${jsFile}`);
       
       const nodeProcess = spawn('node', [jsFile], { stdio: 'inherit' });
       
       nodeProcess.on('close', (code: number) => {
-        console.log(`🏁 Processo finalizado com código: ${code}`);
+        // console.log(`🏁 Processo finalizado com código: ${code}`);
       });
     } else {
       console.error(`❌ Compilação falhou: arquivo ${jsFile} não foi gerado`);
