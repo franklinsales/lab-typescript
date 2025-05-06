@@ -94,3 +94,8 @@ const readonlyArray: ReadonlyArray<number> = [1, 2, 3, 4, 5]; // This is a valid
 // readonlyArray.pop(); // This will give an error because the array is readonly
 // readonlyArray.shift(); // This will give an error because the array is readonly
 // readonlyArray.unshift(0); // This will give an error because the array is readonly
+
+let readonlyArrayNotInitialized: ReadonlyArray<number>; // This is a valid readonly array of numbers
+readonlyArrayNotInitialized = [1, 2, 3, 4, 5]; // Here we are initializing the readonly array
+// readonlyArrayNotInitialized[0] = 10; // This will give an error because the array is readonly
+// readonlyArrayNotInitialized.push(6); // This will give an error because the array is readonly
