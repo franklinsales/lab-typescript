@@ -44,11 +44,11 @@ let result: number = add(1, 2); // This is a valid number
 console.log(`Result:`, result); // This will print 3
 
 // You can also use this type alias to create function parameters and return types
-function addNumbers(add: AddFunction): number {
+function addNumbersT(add: AddFunction): number {
   return add(1, 2); // Here we are using the add function was passed as a parameter
 }
 // Usage:
-let sumTotal: number = addNumbers(add); // This is a valid number
+let sumTotal: number = addNumbersT(add); // This is a valid number
 console.log(`Total Sum:`, sumTotal); // This will print 3
 // if you try to pass a function that does not match the AddFunction type, you will get a compile-time error
 // ❌ let sumTotalError: number = addNumbers((a, b, c) => a + b + c); // This will give a compile-time error: Argument of type '(a: any, b: any, c: any) => any' is not assignable to parameter of type 'AddFunction'.
