@@ -159,3 +159,33 @@ function higherOrderFn(fn: (a: number, b: number) => number): (a: number, b: num
 const addNewFn = (a: number, b: number): number => a + b; // This is a valid function
 const addFnHigherOrder = higherOrderFn(addNewFn); // This is a valid function
 console.log(`Add Higher Order:`, addFnHigherOrder(1, 2)); // This will print 3
+
+// this functions can be more readable if you use type aliases
+type THigherOrderFn = (a: number, b: number) => number; // This is a valid function type
+function higherOrderFnType(fn: THigherOrderFn): THigherOrderFn {
+  return function (a: number, b: number): number {
+    return fn(a, b); // This is a valid number
+  }
+}
+// Usage:
+const addNewFnType = (a: number, b: number): number => a + b; // This is a valid function
+const addFnHigherOrderType = higherOrderFnType(addNewFnType); // This is a valid function
+console.log(`Add Higher Order Type:`, addFnHigherOrderType(1, 2)); // This will print 3
+
+// ======================================================================================
+// ======================================================================================
+
+// 11. Closures
+// A closure is a function that has access to the outer function's scope even after the outer function has returned
+// This is a valid closure
+function closureFn(a: number): (b: number) => number {
+  return function (b: number): number {
+    return a + b; // This is a valid number
+  }
+}
+// Usage:
+const addClosure = closureFn(1); // This is a valid function
+console.log(`Add Closure:`, addClosure(2)); // This will print 3
+// The closure has access to the outer function's scope even after the outer function has returned
+
+
